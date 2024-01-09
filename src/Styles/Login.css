@@ -1,0 +1,30 @@
+/* YourStyleSheet.css */
+
+.loginPage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-text {
+  font-size: 24px;
+  color: #fff; /* Text color based on the color theme */
+  margin-bottom: 20px;
+}
+
+.login-with-google-btn {
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff; /* Button background color based on the color theme */
+  color: #fff; /* Text color based on the color theme */
+  font-size: 18px;
+}
+
+.login-with-google-btn:hover {
+  background-color: #0056b3; /* Hover background color based on the color theme */
+}

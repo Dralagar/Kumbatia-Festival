@@ -1,0 +1,73 @@
+/* Global styles */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center items vertically */
+}
+
+.logo {
+  max-width: 100px; /* Adjust the max-width based on your logo size */
+  height: auto;
+}
+
+.nav-link {
+  color: #333;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s ease; /* Add smooth transition effect */
+}
+
+/* Hover styles for navigation links */
+.nav-link:hover {
+  color: #e44d26; /* Adjust the color on hover */
+}
+
+/* Add styles for the active link if needed */
+.nav-link.active {
+  color: #e44d26; /* Adjust the color for the active link */
+}
+
+.btn-logout {
+  margin-top: 10px;
+}
+
+/* Media Query for responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-link {
+    margin: 10px 0;
+  }
+
+  .btn-logout {
+    margin-top: 20px;
+  }
+}
+
+/* Additional styles for .a-navbar */
+.a-navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Adjustments for the active state in .a-navbar */
+.a-navbar.active {
+  background-color: #e44d26; /* Adjust the background color for the active state */
+}
