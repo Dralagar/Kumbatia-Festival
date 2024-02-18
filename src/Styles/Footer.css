@@ -1,0 +1,45 @@
+/* Footer.css */
+
+/* Footer container */
+.footerCon {
+  background-color: #333; /* Dark background color */
+  color: #fff; /* Text color */
+  padding: 20px; /* Padding for the content inside the footer */
+  text-align: center; /* Center align text */
+}
+
+/* Image container */
+.img img {
+  display: block;
+  margin: 0 auto; /* Center align the image */
+  max-width: 100%; /* Ensure image doesn't overflow */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Footer content */
+.footerCon span {
+  display: block;
+  margin-top: 15px; /* Increased margin for better spacing */
+  font-size: 14px;
+  line-height: 1.5; /* Improved line height for better readability */
+}
+
+/* Footer links */
+.footerCon a {
+  color: #fff; /* Link color */
+  text-decoration: none; /* Remove default underline */
+  margin: 0 10px; /* Margin between links */
+  font-weight: bold; /* Bold font weight for links */
+}
+
+/* Hover effect on links */
+.footerCon a:hover {
+  text-decoration: underline; /* Underline links on hover */
+}
+
+/* Responsive design - adjust as needed */
+@media (max-width: 768px) {
+  .footerCon {
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
+}

@@ -1,41 +1,228 @@
-/* Home.css */
+/* Global styles */
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333; /* Text color for better readability */
+}
+
+/* Header styles */
 .header {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   text-align: center;
-  background-color: #333; /* Adjust background color to match your theme */
-  color: #fff; /* Adjust font color to match your theme */
+  padding: 40px 20px;
+  background-color: rgb(53, 24, 3);
+  color: #fff;
 }
 
-.text-content {
-  position: relative;
-  z-index: 1;
-}
-
-.background-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.5); /* Adjust brightness if needed */
-}
-
-.title {
-  font-size: 3rem;
+.header h1 {
+  font-size: 2.5em;
   margin-bottom: 10px;
 }
 
-.subtitle {
+.header h2 {
+  font-size: 1.5em;
+}
+
+/* Add parabolic effect to the image */
+.parabolic-img-container {
+  overflow: hidden;
+}
+
+.parabolic-img {
+  animation: parabolic 3s infinite alternate;
+}
+
+@keyframes parabolic {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+/* Background image styles */
+.background-img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 380px; /* Adjust the height as needed */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.dropdownAbt{
+  align-content: center;
+  display: flex;
+  margin-left: 10px;
+  padding-left: 2px;
+}
+
+.Call-to-Action{
+  align-items: center;
+  align-content: center ;
+  margin-left: 5px;
+  padding-left: 3px;
+}
+.Background-img {
+  width: 300px;
+}
+
+.background-img img {
+  display: none; /* Hide the image as it's set as a background */
+}
+
+.background-img p {
+  font-size: 1.2em;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  z-index: 1; /* Ensure text is above the background image */
+}
+
+/* Section styles */
+.section {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f0f0f0;
+}
+
+.section p {
+  font-size: 1.2em;
+}
+
+/* Flex container styles */
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  flex: 1;
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.flex-column:hover {
+  transform: scale(1.05);
+}
+
+.flex-column h2 {
+  color: #333;
   font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.flex-column img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.flex-column p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.full-width {
+  width: 100%;
+  height: auto;
+}
+
+/* Responsive design - adjust as needed */
+@media (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+  }
+
+  .header h1 {
+    font-size: 2em;
+  }
+
+  .background-img {
+    height: 200px; /* Adjust the height as needed */
+  }
+}
+
+/* FAQsComponent.css */
+.faqs-section {
+  margin: 40px 0;
+}
+
+.faq-item {
   margin-bottom: 20px;
 }
 
-.date {
-  font-size: 1rem;
-  margin-top: 20px;
+.faq-item h3 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.faq-item p {
+  font-size: 1.2em;
+  line-height: 1.5;
+  color: #555;
+}
+
+.common-questions,
+.festival-overview,
+.additional-resources {
+  margin-bottom: 30px;
+}
+
+.common-questions h3,
+.festival-overview h3,
+.additional-resources h3 {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.additional-resources ul {
+  list-style: none;
+  padding: 0;
+}
+
+.additional-resources li {
+  margin-bottom: 10px;
+}
+
+.additional-resources a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* Responsive design - adjust as needed */
+@media (max-width: 768px) {
+  .faq-item h3 {
+    font-size: 1.3em;
+  }
+
+  .faq-item p {
+    font-size: 1.1em;
+  }
+
+  .common-questions h3,
+  .festival-overview h3,
+  .additional-resources h3 {
+    font-size: 1.5em;
+  }
 }

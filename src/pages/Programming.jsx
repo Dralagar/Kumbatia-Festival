@@ -1,50 +1,80 @@
 import React from "react";
 
-function Programming() {
-  const eventSchedule = [
-    {
-      id: 1,
-      date: "July 1, 2024",
-      time: "10:00 AM - 1:00 PM",
-      location: "Main Stage",
-    },
-    {
-      id: 2,
-      date: "July 1, 2024",
-      time: "2:00 PM - 5:00 PM",
-      location: "Cultural Exhibitions Area",
-    },
-    // Add more events as needed
-  ];
+const eventSchedule = [
+  {
+    id: 1,
+    date: "July 1, 2024",
+    time: "10:00 AM - 1:00 PM",
+    location: "Main Stage",
+  },
+  {
+    id: 2,
+    date: "July 1, 2024",
+    time: "2:00 PM - 5:00 PM",
+    location: "Cultural Exhibitions Area",
+  },
+  {
+    id: 3,
+    date: "July 2, 2024",
+    time: "11:00 AM - 2:00 PM",
+    location: "Main Stage",
+  },
+  {
+    id: 4,
+    date: "July 2, 2024",
+    time: "3:00 PM - 6:00 PM",
+    location: "Cultural Exhibitions Area",
+  },
+  {
+    id: 5,
+    date: "July 3, 2024",
+    time: "1:00 PM - 4:00 PM",
+    location: "Main Stage",
+  },
+  // Add more events as needed
+];
 
-  const eventCategories = [
-    {
-      id: 1,
-      name: "Cultural Exhibitions",
-      description:
-        "Explore the rich cultural heritage of Africa through various exhibits.",
-    },
-    {
-      id: 2,
-      name: "Performances",
-      description:
-        "Experience captivating performances showcasing Africa’s artistic talent.",
-    },
-    {
-      id: 3,
-      name: "Screenings",
-      description:
-        "Enjoy thought-provoking film screenings that highlight African stories.",
-    },
-    {
-      id: 4,
-      name: "Discussions",
-      description:
-        "Engage in insightful discussions on topics shaping African societies.",
-    },
-    // Add more categories as needed
-  ];
+const eventCategories = [
+  {
+    id: 1,
+    name: "Cultural Exhibitions",
+    description:
+      "Explore the rich cultural heritage of Africa through various exhibits.",
+  },
+  {
+    id: 2,
+    name: "Performances",
+    description:
+      "Experience captivating performances showcasing Africa’s artistic talent.",
+  },
+  {
+    id: 3,
+    name: "Screenings",
+    description:
+      "Enjoy thought-provoking film screenings that highlight African stories.",
+  },
+  {
+    id: 4,
+    name: "Discussions",
+    description:
+      "Engage in insightful discussions on topics shaping African societies.",
+  },
+  {
+    id: 5,
+    name: "Workshops",
+    description:
+      "Participate in interactive workshops covering various aspects of African culture and society.",
+  },
+  {
+    id: 6,
+    name: "Cuisine",
+    description:
+      "Indulge in a culinary journey through the diverse flavors of Africa.",
+  },
+  // Add more categories as needed
+];
 
+const Programming = () => {
   return (
     <div className="programming-container">
       {/* Event Schedule */}
@@ -62,22 +92,22 @@ function Programming() {
       {/* Event Categories */}
       <div className="event-categories" style={sectionStyles}>
         <h2>Event Categories</h2>
-        <ul>
+        <div className="category-grid">
           {eventCategories.map((category) => (
-            <li key={category.id} className="category-item">
+            <div key={category.id} className="category-item">
               <h3>{category.name}</h3>
               <p>{category.description}</p>
               {/* Add a link to detailed descriptions of respective events within each category */}
               <a href={`/events/${category.id}`} className="view-events-link">
                 View Events
               </a>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );
-}
+};
 
 // Styles (you can customize these styles)
 const sectionStyles = {

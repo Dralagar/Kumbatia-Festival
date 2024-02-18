@@ -1,5 +1,7 @@
+// CreatePost.jsx
 import React from "react";
 import "../Styles/CreatePost.css";
+
 function CreatePost() {
   return (
     <div className="Container">
@@ -14,7 +16,7 @@ function CreatePost() {
             <label>Post:</label>
             <textarea placeholder="Post..." />
           </div>
-          <button> Submit Post</button>
+          <button>Submit Post</button>
         </div>
       </div>
     </div>

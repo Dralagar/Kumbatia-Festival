@@ -1,12 +1,118 @@
 /* App.css */
 
-body {
-  font-family: "Arial", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: #f8f9fa; /* Set your background color */
+/* Navigation styling */
+.nav {
+  display: flex; /* Display navbar items in a row */
+  justify-content: space-between; /* Distribute space between navbar items */
+  align-items: center; /* Vertically center navbar items */
+  background-color: #ffffff; /* Set background to white */
+  color: #000000; /* Set text color to black for better contrast */
+  padding: 10px;
 }
-.App {
+
+.Logo {
+  display: flex;
   align-items: center;
+  text-decoration: none;
+  color: #000000; /* Set text color to black */
+  font-size: 24px;
+  font-weight: bold; /* Increased font weight for the logo */
+}
+
+.Logo img {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.menu-btn {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btn-line {
+  width: 30px;
+  height: 3px;
+  background-color: #000000; /* Set button line color to black */
+  margin: 6px 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.menu-btn.active div:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-btn.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.active div:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.overlay.active {
+  display: block;
+}
+
+.nav-links {
+  display: flex; /* Display nav links in a row */
+  align-items: center; /* Vertically center nav links */
+}
+
+.nav-links a {
+  color: #000000; /* Set link color to black */
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px;
+  transition: color 0.3s; /* Added transition effect */
+}
+
+.nav-links a:hover {
+  color: #ffd700; /* Set hover color to gold */
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav.active .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #ffffff; /* Set background to white for dropdown menu */
+    width: 100%;
+  }
+
+  .menu-btn {
+    display: flex;
+  }
+}
+
+/* Desktop Navigation */
+@media (min-width: 769px) {
+  .menu-btn {
+    display: none;
+  }
+
+  .nav-links {
+    justify-content: space-between;
+    width: 50%;
+  }
 }

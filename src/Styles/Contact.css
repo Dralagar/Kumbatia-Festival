@@ -3,13 +3,32 @@
 .contact-section {
   padding: 50px 0;
 }
-
+.contact-section {
+  justify-content: center;
+  align-items: center;
+  background-color: #f0e5e5;
+}
+.Contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+.form-style {
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
 .social-media-section {
   margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
 }
 
 .social-links {
-  display: flex;
+  display: block;
   gap: 20px;
   font-size: 24px;
 }
@@ -21,4 +40,5 @@
 
 .social-links i:hover {
   color: #007bff;
+  width: 30px;
 }
