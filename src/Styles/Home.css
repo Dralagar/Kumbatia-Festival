@@ -1,11 +1,11 @@
-/* Global styles */
 body {
   font-family: "Arial", sans-serif;
   margin: 0;
   padding: 0;
   color: #333; /* Text color for better readability */
+  background-color: #FFD700;
+  overflow-x: hidden;
 }
-
 /* Header styles */
 .header {
   text-align: center;
@@ -13,25 +13,20 @@ body {
   background-color: rgb(53, 24, 3);
   color: #fff;
 }
-
 .header h1 {
   font-size: 2.5em;
   margin-bottom: 10px;
 }
-
 .header h2 {
   font-size: 1.5em;
 }
-
 /* Add parabolic effect to the image */
 .parabolic-img-container {
   overflow: hidden;
 }
-
 .parabolic-img {
   animation: parabolic 3s infinite alternate;
 }
-
 @keyframes parabolic {
   0% {
     transform: translateY(0);
@@ -43,20 +38,19 @@ body {
     transform: translateY(0);
   }
 }
-
-
 /* Background image styles */
 .background-img {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 380px; /* Adjust the height as needed */
+  height: 400px; /* Adjust the height as needed */
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  color: ;
 }
 .dropdownAbt{
   align-content: center;
@@ -64,7 +58,6 @@ body {
   margin-left: 10px;
   padding-left: 2px;
 }
-
 .Call-to-Action{
   align-items: center;
   align-content: center ;
@@ -74,11 +67,9 @@ body {
 .Background-img {
   width: 300px;
 }
-
 .background-img img {
   display: none; /* Hide the image as it's set as a background */
 }
-
 .background-img p {
   font-size: 1.2em;
   color: #fff;
@@ -86,18 +77,15 @@ body {
   margin: 0;
   z-index: 1; /* Ensure text is above the background image */
 }
-
 /* Section styles */
 .section {
   text-align: center;
   padding: 40px 20px;
-  background-color: #f0f0f0;
+  background-color: #F0F0F0;
 }
-
 .section p {
   font-size: 1.2em;
 }
-
 /* Flex container styles */
 .flex-container {
   display: flex;
@@ -105,7 +93,6 @@ body {
   margin: 20px;
   flex-wrap: wrap;
 }
-
 .flex-column {
   flex: 1;
   padding: 20px;
@@ -114,19 +101,18 @@ body {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
+  transition: 0.3s;
 }
-
 .flex-column:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
+  transition: 2s;
+  cursor: pointer;
 }
-
 .flex-column h2 {
   color: #333;
   font-size: 1.5rem;
   margin-bottom: 10px;
 }
-
 .flex-column img {
   width: 100%;
   height: auto;
@@ -134,59 +120,48 @@ body {
   border-radius: 8px;
   margin-bottom: 15px;
 }
-
 .flex-column p {
   font-size: 1rem;
   line-height: 1.5;
 }
-
 .full-width {
   width: 100%;
   height: auto;
 }
-
 /* Responsive design - adjust as needed */
 @media (max-width: 768px) {
   .flex-container {
     flex-direction: column;
   }
-
   .header h1 {
     font-size: 2em;
   }
-
   .background-img {
     height: 200px; /* Adjust the height as needed */
   }
 }
-
 /* FAQsComponent.css */
 .faqs-section {
   margin: 40px 0;
 }
-
 .faq-item {
   margin-bottom: 20px;
 }
-
 .faq-item h3 {
   font-size: 1.5em;
   color: #333;
   margin-bottom: 10px;
 }
-
 .faq-item p {
   font-size: 1.2em;
   line-height: 1.5;
   color: #555;
 }
-
 .common-questions,
 .festival-overview,
 .additional-resources {
   margin-bottom: 30px;
 }
-
 .common-questions h3,
 .festival-overview h3,
 .additional-resources h3 {
@@ -194,35 +169,38 @@ body {
   color: #333;
   margin-bottom: 15px;
 }
-
 .additional-resources ul {
   list-style: none;
   padding: 0;
 }
-
 .additional-resources li {
   margin-bottom: 10px;
 }
-
 .additional-resources a {
   text-decoration: none;
-  color: #007bff;
+  color: #007BFF;
   font-weight: bold;
 }
-
 /* Responsive design - adjust as needed */
 @media (max-width: 768px) {
   .faq-item h3 {
     font-size: 1.3em;
   }
-
   .faq-item p {
     font-size: 1.1em;
   }
-
   .common-questions h3,
   .festival-overview h3,
   .additional-resources h3 {
     font-size: 1.5em;
   }
+}
+.toggle-btn {
+  font-size: 50px;
+  height: 20px;
+  width: 20px;
+  transform: translate(10px, -10px);
+}
+.toggle-btn:hover {
+  cursor: pointer;
 }

@@ -6,16 +6,19 @@ import utImage from "../assets/africanmendr.jpg";
 const About = () => {
   return (
     <div className="container mt-5">
+      <h1 className="section-title mb-4 text-center">About Us</h1>
       <div className="row">
         <div className="col-lg-6 col-md-12 mb-4">
           <div className="about-section">
-            <h2 className="mb-4">Our Story</h2>
-            <img
-              src={utImage}
-              alt="Description for utImage"
-              className="img-fluid mb-3"
-            />
-            <p>
+            <h2 className="subsection-title mb-4">Our Story</h2>
+            <div className="image-container">
+              <img
+                src={utImage}
+                alt="Description for utImage"
+                className="img-fluid mb-3"
+              />
+            </div>
+            <p className="about-description">
               Overview: An in-depth explanation of the festival's mission,
               vision, and values. Mission and vision statement History of the
               festival Festival team / Governance of the Festival Partners and
@@ -27,22 +30,45 @@ const About = () => {
           </div>
         </div>
 
-        <div className="col-lg-6 col-md-12">
+        <div className="col-lg-6 col-md-12 mb-4">
           <div className="about-section">
-            <h2 className="mb-4">Our Mission</h2>
-            <img
-              src={itImage}
-              alt="Description for itImage"
-              className="img-fluid mb-3"
-            />
-            <p>
-              Fusce euismod ligula nec erat tincidunt, vitae cursus mauris
-              hendrerit. Nunc sit amet laoreet est. Nam eget magna vel orci
-              bibendum efficitur eu vitae leo. Sed vel turpis nec elit congue
-              malesuada ac sit amet elit.
+            <h2 className="subsection-title mb-4">Our Mission</h2>
+            <div className="image-container">
+              <img
+                src={itImage}
+                alt="Description for itImage"
+                className="img-fluid mb-3"
+              />
+            </div>
+            <p className="about-description">
+            To Serve as a dynamic platform where Africa's rich cultural diversity and artistic talent unite communities and become a force for peace and social integration.
+
             </p>
           </div>
+          <div>
+
+          </div>
+          <div className="col-lg-6 col-md-12 mb-4">
+          <div className="about-section">
+            <h2 className="subsection-title mb-4">Values</h2>
+            <div className="image-container">
+              <img
+                src={itImage}
+                alt="Description for itImage"
+                className="img-fluid mb-3"
+              />
+            </div>
+            <p className="about-description">
+            To Serve as a dynamic platform where Africa's rich cultural diversity and artistic talent unite communities and become a force for peace and social integration.
+
+            </p>
+          </div>
+          <div>
+            
+          </div>
         </div>
+        </div>
+
       </div>
     </div>
   );

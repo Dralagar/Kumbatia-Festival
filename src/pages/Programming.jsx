@@ -1,9 +1,10 @@
 import React from "react";
+import EventBackground from "../assets/Gryl.jpg"
 
 const eventSchedule = [
   {
     id: 1,
-    date: "July 1, 2024",
+    date: "September 24, 2024",
     time: "10:00 AM - 1:00 PM",
     location: "Main Stage",
   },
@@ -15,7 +16,7 @@ const eventSchedule = [
   },
   {
     id: 3,
-    date: "July 2, 2024",
+    date: "September 2, 2024",
     time: "11:00 AM - 2:00 PM",
     location: "Main Stage",
   },
@@ -25,12 +26,7 @@ const eventSchedule = [
     time: "3:00 PM - 6:00 PM",
     location: "Cultural Exhibitions Area",
   },
-  {
-    id: 5,
-    date: "July 3, 2024",
-    time: "1:00 PM - 4:00 PM",
-    location: "Main Stage",
-  },
+  
   // Add more events as needed
 ];
 
@@ -81,6 +77,7 @@ const Programming = () => {
       <div className="event-schedule" style={sectionStyles}>
         <h2>Event Schedule</h2>
         <ul>
+          <img src={EventBackground}/>
           {eventSchedule.map((event) => (
             <li key={event.id}>
               <strong>{event.date}</strong> | {event.time} | {event.location}

@@ -1,57 +1,50 @@
 /* App.css */
-
 /* Navigation styling */
 .nav {
   display: flex; /* Display navbar items in a row */
   justify-content: space-between; /* Distribute space between navbar items */
   align-items: center; /* Vertically center navbar items */
-  background-color: #ffffff; /* Set background to white */
-  color: #000000; /* Set text color to black for better contrast */
+  background-color: #333; /* Set background to white */
+  color: #FFFFFF; /* Set text color to black for better contrast */
   padding: 10px;
+  position: relative; /* Add positioning context */
 }
-
 .Logo {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #000000; /* Set text color to black */
+  color: #FFFFFF; /* Set text color to white */
   font-size: 24px;
   font-weight: bold; /* Increased font weight for the logo */
 }
-
 .Logo img {
   width: 60px;
   height: 60px;
   margin-right: 10px;
   border-radius: 50%;
 }
-
 .menu-btn {
   display: flex;
   align-items: center;
   cursor: pointer;
+  position: relative; /* Add positioning context */
 }
-
 .btn-line {
   width: 30px;
   height: 3px;
-  background-color: #000000; /* Set button line color to black */
+  background-color: #FFFFFF; /* Set button line color to white */
   margin: 6px 0;
-  transition: transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s;
 }
-
 .menu-btn.active div:nth-child(1) {
-  transform: rotate(-45deg) translate(-5px, 6px);
+  transform: rotate(0deg) translate(-5px, -5px);
 }
-
 .menu-btn.active div:nth-child(2) {
-  opacity: 0;
+  opacity: 1;
 }
-
 .menu-btn.active div:nth-child(3) {
-  transform: rotate(45deg) translate(-5px, -6px);
+  transform: rotate(0deg) translate(-5px, -6px);
 }
-
 .overlay {
   display: none;
   position: fixed;
@@ -62,57 +55,72 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
-
+.breadcrumb-btn {
+  width: 30px;
+  height: 30px;
+  font-size: 35px;
+  color: #FFFFFF;
+  cursor: pointer;
+  transform: translateY(-10px);
+  margin-left: 1000%; /* to push the humbergar menu to the very end */
+}
 .overlay.active {
   display: block;
 }
-
 .nav-links {
   display: flex; /* Display nav links in a row */
   align-items: center; /* Vertically center nav links */
+  visibility: visible; /* Hide the nav links */
+  opacity: 1;
+  color: white;
 }
-
 .nav-links a {
-  color: #000000; /* Set link color to black */
+  color: #FFFFFF;
   text-decoration: none;
   font-size: 16px;
   padding: 10px;
-  transition: color 0.3s; /* Added transition effect */
+  transition: color 0.5s; /* Added transition effect */
 }
-
 .nav-links a:hover {
-  color: #ffd700; /* Set hover color to gold */
+  color: #FFD700; /* Set hover color to gold */
 }
-
 /* Responsive Navigation */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-
-  .nav.active .nav-links {
+  .nav-links.active {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 60px;
+    top: 50px; /* Adjusted position */
     left: 0;
-    background-color: #ffffff; /* Set background to white for dropdown menu */
     width: 100%;
+    background-color: #333;
+    z-index: 2; /* Ensure it appears above the overlay */
   }
-
+  .nav-links.active {
+    visibility: visible; /* Show the nav links */
+    opacity: 1;
+  }
+  .nav-links {
+    visibility: hidden; /* Hide the nav links */
+  }
   .menu-btn {
     display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .close-btn {
+    font-size: 50px;
+    z-index: 10;
   }
 }
-
 /* Desktop Navigation */
 @media (min-width: 769px) {
   .menu-btn {
     display: none;
   }
-
   .nav-links {
     justify-content: space-between;
     width: 50%;
   }
 }
+

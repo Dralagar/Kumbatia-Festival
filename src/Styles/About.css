@@ -1,61 +1,92 @@
 /* About.css */
 .container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  display: flex;
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.row {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.col-md-6 {
-  flex: 0 0 50%;
-  max-width: 50%;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-.about-section {
-  padding: 30px;
-  border: 1px solid #ddd;
-  margin-bottom: 30px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 100%; /* Ensure full width within the column */
-}
-
-.about-section h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
+.section-title {
+  font-size: 2.5rem;
   color: #333;
 }
 
-.about-section img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 20px;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.about-section p {
-  font-size: 16px;
-  line-height: 1.6;
+.subsection-title {
+  font-size: 1.8rem;
   color: #555;
 }
 
-/* Responsive Styles */
+.about-section {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+
+.image-container:hover {
+  transform: scale(1.05);
+}
+
+.about-description {
+  font-size: 1.2rem;
+  color: #777;
+  line-height: 1.6;
+}
+
 @media (max-width: 768px) {
-  .col-md-6 {
+  .col-lg-6 {
     flex: 0 0 100%;
     max-width: 100%;
   }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.scroll-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.scroll-up,
+.scroll-down {
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.scroll-up:hover,
+.scroll-down:hover {
+  background-color: #555;
+}
+
+.scroll-up {
+  margin-bottom: 10px;
+}
+
+.scroll-down {
+  margin-top: 10px;
 }

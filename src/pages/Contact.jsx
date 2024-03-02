@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
 import "../Styles/Contact.css";
-
+import chatroom from "../assets/Engage.jpg"
 const Contact = () => {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState({ name: "", message: "" });
   const [email, setEmail] = useState("");
+  const [messageDelivered, setMessageDelivered] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,6 +23,9 @@ const Contact = () => {
       const commentWithTags = addTags(newComment.message);
       setComments([...comments, { ...newComment, message: commentWithTags }]);
       setNewComment({ name: "", message: "" });
+      setMessageDelivered(true);
+      // Reset the "Thank you" message after 3 seconds
+      setTimeout(() => setMessageDelivered(false), 3000);
     }
   };
 
@@ -43,7 +47,7 @@ const Contact = () => {
     e.preventDefault();
     // You can add subscription logic here
     console.log(`Subscribed with email: ${email}`);
-    setEmail("");
+    setEmail("kumbatiaafrica.gmail.com");
   };
 
   const renderComments = () => {
@@ -58,8 +62,9 @@ const Contact = () => {
 
   return (
     <Container className="contact-section">
-      <Row className="Contact">
-        <Card>
+      <img src={chatroom}/>
+      <Row className="contact-container">
+        <Card className="contact-card">
           <Col md={6}>
             <h2>Contact Information</h2>
             <p>Email: info@kumbatiapfestival.com</p>
@@ -67,10 +72,10 @@ const Contact = () => {
             {/* Additional contact information can be added */}
           </Col>
         </Card>
-        <Card>
+        <Card className="contact-card">
           <Col md={6}>
             <h2>Contact Form</h2>
-            <Form className="form-style">
+            <Form className="form-style" onSubmit={handleSubmitComment}>
               <Form.Group controlId="formName">
                 <Form.Label>Your Name</Form.Label>
                 <Form.Control
@@ -92,10 +97,10 @@ const Contact = () => {
                   onChange={handleChange}
                 />
               </Form.Group>
+              {messageDelivered && <p className="thank-you-message">Thank you, message delivered!</p>}
               <Button
                 variant="primary"
                 type="submit"
-                onClick={handleSubmitComment}
               >
                 Submit
               </Button>
@@ -103,16 +108,16 @@ const Contact = () => {
           </Col>
         </Card>
       </Row>
-      <Row>
-        <Card>
+      <Row className="comment-row">
+        <Card className="comment-card">
           <Col md={6}>
             <h2>Live Comments</h2>
             <div className="comments">{renderComments()}</div>
           </Col>
         </Card>
       </Row>
-      <Row>
-        <Card>
+      <Row className="subscribe-row">
+        <Card className="subscribe-card">
           <Col md={6}>
             <h2>Subscribe to Our Newsletter</h2>
             <p>Stay updated with our latest news and announcements.</p>

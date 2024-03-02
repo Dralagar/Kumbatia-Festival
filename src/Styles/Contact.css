@@ -1,44 +1,59 @@
 /* Contact.css */
-
 .contact-section {
   padding: 50px 0;
-}
-.contact-section {
-  justify-content: center;
-  align-items: center;
-  background-color: #f0e5e5;
-}
-.Contact {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  align-content: center;
-}
-.form-style {
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-}
-.social-media-section {
-  margin-top: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
 }
 
-.social-links {
-  display: block;
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
-  font-size: 24px;
 }
 
-.social-links i {
-  color: #333;
-  transition: color 0.3s ease;
+.contact-card,
+.comment-card,
+.subscribe-card {
+  width: calc(50% - 20px);
+  max-width: 400px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
 }
 
-.social-links i:hover {
-  color: #007bff;
-  width: 30px;
+.contact-card h2,
+.comment-card h2,
+.subscribe-card h2 {
+  text-align: center;
+}
+
+.form-style {
+  margin-top: 20px;
+}
+
+.comments,
+.subscribe-form {
+  width: 100%;
+}
+
+.comments .comment,
+.subscribe-form * {
+  margin-bottom: 10px;
+}
+
+.hashtag {
+  color: blue;
+}
+
+.thank-you-message {
+  color: green;
+  margin-top: 10px;
+}
+
+.contact-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
 }

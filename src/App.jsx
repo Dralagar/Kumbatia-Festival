@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Createpost from "./pages/CreatePost";
@@ -7,38 +7,47 @@ import KumbatiaLogo from "../src/assets/Kumbatia.jpeg";
 import Partners from "./pages/Partners";
 import Programming from "./pages/Programming";
 import Contact from "./pages/Contact";
-import "./Styles/App.css";
 import About from "./pages/About";
 import Footer from "./pages/Footer";
+import "./Styles/App.css";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
-
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-
   const closeMenu = () => {
     setMenuOpen(false);
   };
 
+  const bottomRef = useRef(null);
+
+  const scrollToBottom = () => {
+    bottomRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <Router>
-      <div className={`overlay ${menuOpen ? "active" : ""}`} onClick={closeMenu}></div>
+      <div
+        className={`overlay ${menuOpen ? "active" : ""}`}
+        onClick={closeMenu}
+      ></div>
       <div className={`nav ${menuOpen ? "active" : ""}`}>
         <Link to="/" className="Logo" onClick={closeMenu}>
           <img src={KumbatiaLogo} alt="Logo" className="logo-img" />
         </Link>
-        <div className={`menu-btn ${menuOpen ? "active" : ""}`} onClick={toggleMenu}>
+        <div
+          className={`menu-btn ${menuOpen ? "active" : ""}`}
+          onClick={toggleMenu}
+        >
           {menuOpen ? (
-            <div className="close-btn">&#215;</div>
+            <div className="close-btn">-</div>
           ) : (
-            <div className="breadcrumb-btn">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <path d="M0 0h24v24H0z" fill="none" />
-                <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
-              </svg>
-            </div>
+            <div className="breadcrumb-btn">&#9776;</div>
           )}
         </div>
         <nav className={`nav-links ${menuOpen ? "active" : ""}`}>
@@ -75,6 +84,15 @@ function App() {
           <Route path="/createpost" element={<Createpost />} />
           <Route path="/login" element={<Login />} />
         </Routes>
+        <div ref={bottomRef}></div>
+      </div>
+      <div className="scroll-buttons">
+        <button className="scroll-up" onClick={scrollToTop}>
+          &#9650;
+        </button>
+        <button className="scroll-down" onClick={scrollToBottom}>
+          &#9660;
+        </button>
       </div>
       <Footer />
     </Router>

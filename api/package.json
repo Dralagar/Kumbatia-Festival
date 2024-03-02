@@ -1,0 +1,23 @@
+{
+    "name": "api",
+    "version": "1.0.0",
+    "description": "API server for Kumbatia",
+    "main": "server.js",
+    "type": "module",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "keywords": [
+      "api",
+      "kumbatia"
+    ],
+    "author": "Your Name",
+    "license": "MIT",
+    "dependencies": {
+      "express": "^4.17.1",
+      "mongoose": "^6.1.2",
+      "dotenv": "^10.0.0",
+      "multer": "^1.4.4"
+    }
+  }
+  
